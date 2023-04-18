@@ -1,0 +1,43 @@
+.about {
+  padding-top: 8rem;
+  text-align: center;
+  max-height: 52rem;
+}
+.about__title {
+  margin-bottom: 3rem;
+}
+.about__logo {
+  width: 2.9rem;
+  transform: translateY(-3.5rem);
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+}
+.about__paragraph {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #000;
+  grid-column: 2/4;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, min-content);
+  grid-row-gap: 2rem;
+}
+
+.decor-black {
+  display: inline-block;
+  width: 6rem;
+  height: 0.1rem;
+  background: #000;
+  margin-bottom: 5rem;
+}
+.decor-black_long {
+  width: 24rem;
+}
+
+.mb-100 {
+  margin-bottom: 10rem;
+}/*# sourceMappingURL=about.css.map */

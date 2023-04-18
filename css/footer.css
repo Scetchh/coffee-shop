@@ -1,0 +1,21 @@
+.footer {
+  padding-top: 4rem;
+  text-align: center;
+  position: relative;
+}
+.footer__nav {
+  margin-bottom: 4.5rem;
+}
+.footer__logo {
+  width: 3.5rem;
+  transform: translateY(0.3rem);
+}
+.footer__link {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+  margin-right: 4rem;
+}
+.footer__link:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=footer.css.map */

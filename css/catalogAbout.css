@@ -1,0 +1,38 @@
+.about-wrapper {
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+  justify-content: center;
+  text-align: center;
+  max-height: 52rem;
+  margin-bottom: 5rem;
+}
+.container-img {
+  padding-top: 7rem;
+  grid-column: 2/3;
+}
+.container-img__img {
+  filter: drop-shadow(0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.25));
+}
+.container-text {
+  padding-top: 9rem;
+  grid-column: 3/4;
+}
+.container-text__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 3.5rem;
+  margin-bottom: 2rem;
+}
+.container-text__paragraph {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #000000;
+  margin-bottom: 5rem;
+}/*# sourceMappingURL=catalogAbout.css.map */

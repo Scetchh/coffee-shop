@@ -1,0 +1,52 @@
+.section-about-coffee {
+  padding-top: 7rem;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+  grid-column-gap: 5rem;
+}
+
+.content-img {
+  grid-column: 2/3;
+}
+.content-text {
+  grid-column: 3/4;
+  text-align: center;
+}
+.content-text__title {
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 3.5rem;
+  color: #000000;
+  margin-bottom: 4rem;
+}
+.content-text__paragraph {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #000000;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+.content-text__paragraph_price {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #000000;
+}
+
+.bold {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #000000;
+}
+.bold_big {
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 3.5rem;
+}/*# sourceMappingURL=aboutCoffeePage.css.map */
