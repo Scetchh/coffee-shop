@@ -18,6 +18,9 @@ import PleasureHeader from '../pleasurePage/pleasureHeader/pleasureHeader';
 
 import './App.sass';
 
+import firstProduct from '../../image/card-1.png';
+import secondProduct from '../../image/card-2.png';
+import thirdProduct from '../../image/card-3.png';
 import coffee from '../../image/catalogAbout-img.png';
 import coffee2 from '../../image/pleasureAbout-img.png';
 
@@ -26,16 +29,56 @@ class App extends Component {
         super(props);
         this.state = {
             products: [
-                {name: 'Solimo Coffee Beans 2 kg', price: '10.73$', id: 1},
-                {name: 'Presto Coffee Beans 1 kg', price: '15.99$', id: 2},
-                {name: 'AROMISTICO Coffee 1 kg', price: '6.99$', id: 3}
-            ]
+                {name: 'Solimo Coffee Beans 2 kg', price: '10.73$', img: {firstProduct}, id: 1},
+                {name: 'Presto Coffee Beans 1 kg', price: '15.99$', img: {secondProduct}, id: 2},
+                {name: 'AROMISTICO Coffee 1 kg', price: '6.99$', img: {thirdProduct}, id: 3}
+            ],
+            goods: [
+                {name: 'AROMISTICO Coffee 1 kg', country: 'Brazil', price: '6.99$', id: 1},
+                {name: 'AROMISTICO Coffee 1 kg', country: 'Kenya', price: '6.99$', id: 2},
+                {name: 'AROMISTICO Coffee 1 kg', country: 'Columbia', price: '6.99$', id: 3},
+                {name: 'AROMISTICO Coffee 1 kg', country: 'Brazil', price: '6.99$', id: 4},
+                {name: 'AROMISTICO Coffee 1 kg', country: 'Brazil', price: '6.99$', id: 5},
+                {name: 'AROMISTICO Coffee 1 kg', country: 'Brazil', price: '6.99$', id: 6},
+            ],
+            term: '',
+            filter: 'all'
         }
     }
 
+    searchCoffee = (items, term) => {
+        if (term.length === 0) {
+            return items;
+        }
+        return items.filter(items => {
+            return items.country.indexOf(term) > -1
+        })
+    }
+
+    onUpdateSearch = (term) => {
+        this.setState({term : term})
+    }
+
+    filterCoffee = (items, filter) => {
+        switch(filter) {
+            case 'brazil':
+                return items.filter(item => item.country === 'Brazil');
+            case 'kenya':
+                return items.filter(item => item.country === 'Kenya');
+            case 'columbia':
+                return items.filter(item => item.country === 'Columbia')
+            default:
+                return items;
+        }
+    }
+
+    onFilterSelect = (filter) => {
+        this.setState({filter});
+    }
 
     render() {
-        const {products} = this.state;
+        const {products, goods, term, filter} = this.state;
+        const visibleGoods = this.filterCoffee(this.searchCoffee(goods, term), filter);
 
         return (
             <Router>
@@ -50,8 +93,8 @@ class App extends Component {
                         <Route exact path="/ourCoffee">
                             <CatalogHeader/>
                             <CatalogAbout img={coffee}/>
-                            <CatalogFilter/>
-                            <CatalogGoods/>
+                            <CatalogFilter onUpdateSearch={this.onUpdateSearch} filter={filter} onFilterSelect={this.onFilterSelect}/>
+                            <CatalogGoods goods={visibleGoods}/>
                             <Footer/>
                         </Route>
                         <Route exact path="/aboutIt">
